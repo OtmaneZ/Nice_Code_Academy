@@ -1,0 +1,115 @@
+[
+    {
+        "title": "Quiz: Les variables Python",
+        "activity_type": "quiz",
+        "description": "Teste tes connaissances sur les variables",
+        "difficulty": "beginner",
+        "points": 10,
+        "content": {
+            "question": "Quel est le bon moyen de créer une variable en Python?",
+            "options": [
+                "var nom = 'Alice'",
+                "nom = 'Alice'",
+                "let nom = 'Alice'",
+                "string nom = 'Alice'"
+            ],
+            "correct_answer": 1,
+            "explanation": "En Python, on crée une variable simplement avec: nom = valeur. Pas besoin de mot-clé spécial!"
+        }
+    },
+    {
+        "title": "Quiz: Les fonctions",
+        "activity_type": "quiz",
+        "description": "Comprends-tu les fonctions?",
+        "difficulty": "beginner",
+        "points": 10,
+        "content": {
+            "question": "Quel mot-clé utilise-t-on pour définir une fonction en Python?",
+            "options": [
+                "func",
+                "function",
+                "def",
+                "define"
+            ],
+            "correct_answer": 2,
+            "explanation": "On utilise 'def' suivi du nom de la fonction et de parenthèses: def ma_fonction():"
+        }
+    },
+    {
+        "title": "Blague Python #1",
+        "activity_type": "joke",
+        "description": "Une petite pause avec une blague de programmeur",
+        "difficulty": "beginner",
+        "points": 5,
+        "content": {
+            "setup": "Pourquoi les programmeurs Python aiment-ils la nature?",
+            "punchline": "Parce qu'ils adorent les 'listes' (list) et les 'tuples' (oiseaux)! 🐦😄",
+            "emoji": "🐍"
+        }
+    },
+    {
+        "title": "Blague Python #2",
+        "activity_type": "joke",
+        "description": "Rions ensemble!",
+        "difficulty": "beginner",
+        "points": 5,
+        "content": {
+            "setup": "Qu'est-ce qu'un serpent Python qui fait des mathématiques?",
+            "punchline": "Un Python qui calcul-ate! 🐍➕",
+            "emoji": "😂"
+        }
+    },
+    {
+        "title": "Histoire: Le bug mystérieux",
+        "activity_type": "story",
+        "description": "Une aventure de débogage interactive",
+        "difficulty": "intermediate",
+        "points": 15,
+        "content": {
+            "text": "Tu travailles sur ton premier programme Python. Soudain, tu vois : 'NameError: name 'x' is not defined'. Que fais-tu?",
+            "choices": [
+                "Vérifier si j'ai bien défini la variable x avant de l'utiliser",
+                "Redémarrer l'ordinateur",
+                "Ignorer l'erreur",
+                "Changer de langage de programmation"
+            ],
+            "correct_choice": 0,
+            "outcomes": [
+                "✅ Excellent! Tu as trouvé que tu avais oublié de définir x. Tu ajoutes 'x = 10' et tout fonctionne!",
+                "❌ Redémarrer ne résout pas les erreurs de code. Il faut comprendre le message d'erreur!",
+                "❌ Ignorer les erreurs ne les fait pas disparaître. Python te dit exactement où est le problème!",
+                "❌ Python est génial! Chaque langage a ses messages d'erreur. Apprends à les lire!"
+            ]
+        }
+    },
+    {
+        "title": "Quiz: Types de données",
+        "activity_type": "quiz",
+        "description": "Connais-tu les types de données Python?",
+        "difficulty": "beginner",
+        "points": 10,
+        "content": {
+            "question": "Quel est le type de la valeur: 3.14",
+            "options": [
+                "int",
+                "str",
+                "float",
+                "bool"
+            ],
+            "correct_answer": 2,
+            "explanation": "3.14 est un nombre décimal, donc de type 'float' (nombre à virgule flottante)"
+        }
+    },
+    {
+        "title": "Blague Python #3",
+        "activity_type": "joke",
+        "description": "Encore une blague!",
+        "difficulty": "beginner",
+        "points": 5,
+        "content": {
+            "setup": "Pourquoi Python est-il si facile à apprendre?",
+            "punchline": "Parce que son nom commence par 'Py' comme 'Pyjama' - c'est confortable! 😴🐍",
+            "emoji": "😎"
+        }
+    }
+]

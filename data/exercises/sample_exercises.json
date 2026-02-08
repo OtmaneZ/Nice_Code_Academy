@@ -1,0 +1,82 @@
+[
+    {
+        "course_id": 1,
+        "title": "Afficher ton nom",
+        "description": "Utilise la fonction print() pour afficher ton nom",
+        "instructions": "Modifie le code pour afficher ton propre nom au lieu de 'Ton Nom'",
+        "starter_code": "# Affiche ton nom\nnom = 'Ton Nom'\nprint(nom)",
+        "solution_code": "nom = 'Alice'\nprint(nom)",
+        "difficulty": "beginner",
+        "points": 10,
+        "order": 1,
+        "test_cases": [
+            {
+                "expression": "len(nom) > 0",
+                "expected": true
+            }
+        ]
+    },
+    {
+        "course_id": 1,
+        "title": "Calculatrice simple",
+        "description": "Effectue des opérations mathématiques de base",
+        "instructions": "Crée deux variables a et b, puis affiche leur somme, différence, produit et quotient",
+        "starter_code": "# Crée une calculatrice simple\na = 10\nb = 5\n\n# Ton code ici\n",
+        "solution_code": "a = 10\nb = 5\nprint(a + b)\nprint(a - b)\nprint(a * b)\nprint(a / b)",
+        "difficulty": "beginner",
+        "points": 15,
+        "order": 2,
+        "test_cases": [
+            {
+                "expression": "a + b",
+                "expected": 15
+            },
+            {
+                "expression": "a * b",
+                "expected": 50
+            }
+        ]
+    },
+    {
+        "course_id": 2,
+        "title": "Fonction salutation",
+        "description": "Crée une fonction qui salue une personne",
+        "instructions": "Crée une fonction 'saluer(nom)' qui retourne 'Bonjour {nom}!'",
+        "starter_code": "def saluer(nom):\n    # Ton code ici\n    pass\n\n# Test\nprint(saluer('Alice'))",
+        "solution_code": "def saluer(nom):\n    return f'Bonjour {nom}!'\n\nprint(saluer('Alice'))",
+        "difficulty": "beginner",
+        "points": 20,
+        "order": 1,
+        "test_cases": [
+            {
+                "expression": "saluer('Alice')",
+                "expected": "Bonjour Alice!"
+            },
+            {
+                "expression": "saluer('Bob')",
+                "expected": "Bonjour Bob!"
+            }
+        ]
+    },
+    {
+        "course_id": 2,
+        "title": "Fonction calcul d'aire",
+        "description": "Calcule l'aire d'un rectangle",
+        "instructions": "Crée une fonction 'aire_rectangle(longueur, largeur)' qui retourne l'aire",
+        "starter_code": "def aire_rectangle(longueur, largeur):\n    # Ton code ici\n    pass\n\n# Test\nprint(aire_rectangle(5, 3))",
+        "solution_code": "def aire_rectangle(longueur, largeur):\n    return longueur * largeur\n\nprint(aire_rectangle(5, 3))",
+        "difficulty": "beginner",
+        "points": 25,
+        "order": 2,
+        "test_cases": [
+            {
+                "expression": "aire_rectangle(5, 3)",
+                "expected": 15
+            },
+            {
+                "expression": "aire_rectangle(10, 4)",
+                "expected": 40
+            }
+        ]
+    }
+]

@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": "Introduction à Python",
+        "slug": "intro-python",
+        "description": "Découvrez les fondamentaux de Python : variables, types de données et opérations de base",
+        "difficulty_level": "beginner",
+        "duration_minutes": 30,
+        "order": 1,
+        "content": "# 🐍 Introduction à Python\n\n## Bienvenue dans le monde Python!\n\nPython est un langage de programmation **puissant** et **facile à apprendre**. Il est utilisé par Google, Netflix, Instagram et bien d'autres!\n\n## Ton premier programme\n\n```python\nprint('Hello, World!')\n```\n\nCe simple programme affiche un message à l'écran. La fonction `print()` est ton meilleur ami en Python!\n\n## Les variables\n\nUne variable est comme une boîte qui contient une valeur:\n\n```python\nnom = 'Alice'\nage = 25\nprint(f'{nom} a {age} ans')\n```\n\n## Types de données de base\n\n- **Chaînes** (str): `'Bonjour'`\n- **Entiers** (int): `42`\n- **Décimaux** (float): `3.14`\n- **Booléens** (bool): `True` ou `False`\n\n## Opérations mathématiques\n\n```python\na = 10\nb = 3\nprint(a + b)  # Addition: 13\nprint(a - b)  # Soustraction: 7\nprint(a * b)  # Multiplication: 30\nprint(a / b)  # Division: 3.333...\n```\n\n## À toi de jouer! 🎮\n\nMaintenant que tu connais les bases, essaie l'exercice suivant!"
+    },
+    {
+        "id": 2,
+        "title": "Les fonctions en Python",
+        "slug": "fonctions-python",
+        "description": "Apprenez à créer et utiliser des fonctions pour organiser votre code",
+        "difficulty_level": "beginner",
+        "duration_minutes": 45,
+        "order": 2,
+        "content": "# 🎯 Les fonctions en Python\n\n## Qu'est-ce qu'une fonction?\n\nUne fonction est un **bloc de code réutilisable** qui effectue une tâche spécifique.\n\n## Créer une fonction\n\n```python\ndef saluer(nom):\n    print(f'Bonjour {nom}!')\n\nsaluer('Alice')  # Appel de la fonction\n```\n\n## Fonctions avec retour\n\n```python\ndef addition(a, b):\n    resultat = a + b\n    return resultat\n\nsomme = addition(5, 3)\nprint(somme)  # 8\n```\n\n## Paramètres par défaut\n\n```python\ndef presentation(nom, age=18):\n    print(f'Je suis {nom} et j\\'ai {age} ans')\n\npresentation('Bob')         # age = 18 par défaut\npresentation('Alice', 25)   # age = 25\n```\n\n## Pourquoi utiliser des fonctions?\n\n- ✅ **Réutilisabilité**: Écrivez une fois, utilisez partout\n- ✅ **Organisation**: Code plus clair et structuré\n- ✅ **Maintenance**: Plus facile à modifier\n- ✅ **Tests**: Facile à tester individuellement\n\n## Exercice pratique\n\nCréons des fonctions ensemble!"
+    }
+]
