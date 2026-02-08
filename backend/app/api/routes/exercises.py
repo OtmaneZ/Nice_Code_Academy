@@ -4,6 +4,7 @@ Routes pour les exercices et l'exécution de code
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from typing import List
+from pydantic import BaseModel
 from app.database import get_db
 from app.models import Exercise, CodeSubmission
 from app.schemas import (
@@ -12,7 +13,23 @@ from app.schemas import (
 )
 from app.services import code_executor
 
+
+class CodeExecuteRequest(BaseModel):
+    """Request pour exécuter du code"""
+    code: str
+
+
 router = APIRouter(prefix="/exercises", tags=["exercises"])
+
+
+@router.get("/", response_model=List[ExerciseResponse])
+async def get_all_exercises(db: Session = Depends(get_db)):
+    """Récupère tous les exercices publiés"""
+    exercises = db.query(Exercise).filter(
+        Exercise.is_published == True
+    ).order_by(Exercise.order).all()
+    
+    return exercises
 
 
 @router.get("/course/{course_id}", response_model=List[ExerciseResponse])
@@ -41,6 +58,38 @@ async def get_exercise(exercise_id: int, db: Session = Depends(get_db)):
         )
     
     return exercise
+
+
+@router.post("/{exercise_id}/execute")
+async def execute_exercise_code(
+    exercise_id: int,
+    request: CodeExecuteRequest,
+    db: Session = Depends(get_db)
+):
+    """
+    Exécute du code pour un exercice spécifique
+    """
+    # Récupérer l'exercice
+    exercise = db.query(Exercise).filter(Exercise.id == exercise_id).first()
+    
+    if not exercise:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Exercice non trouvé"
+        )
+    
+    # Exécuter le code avec les tests de l'exercice
+    result = code_executor.execute_code(
+        code=request.code,
+        test_cases=exercise.test_cases if hasattr(exercise, 'test_cases') else None
+    )
+    
+    return {
+        "success": result.get("success", False),
+        "output": result.get("output", ""),
+        "errors": result.get("error"),
+        "test_results": result.get("test_results", [])
+    }
 
 
 @router.post("/", response_model=ExerciseResponse, status_code=status.HTTP_201_CREATED)
@@ -105,11 +154,11 @@ async def submit_code(
 
 
 @router.post("/execute", response_model=CodeExecutionResult)
-async def execute_code(code: str):
+async def execute_code_sandbox(request: CodeExecuteRequest):
     """
     Exécute du code Python sans le lier à un exercice (mode sandbox)
     """
-    result = code_executor.execute_code(code=code)
+    result = code_executor.execute_code(code=request.code)
     
     return CodeExecutionResult(
         is_correct=result.get("success", False),
