@@ -19,11 +19,13 @@ class Exercise(Base):
     starter_code = Column(Text)
     solution_code = Column(Text)
     test_cases = Column(JSON)  # Liste de tests à exécuter
+    hints = Column(Text)  # Indices pour aider l'étudiant
     difficulty = Column(String)
     points = Column(Integer, default=10)
     order = Column(Integer, default=0)
     is_published = Column(Boolean, default=True)
     created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
     # Relations
     course = relationship("Course", back_populates="exercises")

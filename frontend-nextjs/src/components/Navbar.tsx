@@ -12,6 +12,7 @@ export default function Navbar() {
     { name: 'Exercices', href: '/exercises' },
     { name: 'Activités', href: '/activities' },
     { name: 'Sandbox', href: '/sandbox' },
+    { name: 'Algorithmes', href: '/algorithmes' },
   ];
 
   return (

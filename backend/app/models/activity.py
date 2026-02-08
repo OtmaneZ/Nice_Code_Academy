@@ -19,6 +19,7 @@ class Activity(Base):
     points = Column(Integer, default=5)
     is_published = Column(Boolean, default=True)
     created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
     """
     Exemples de content JSON:

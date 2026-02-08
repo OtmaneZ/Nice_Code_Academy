@@ -13,6 +13,7 @@ class ExerciseBase(BaseModel):
     description: Optional[str] = None
     instructions: Optional[str] = None
     starter_code: Optional[str] = None
+    hints: Optional[str] = None
     difficulty: str
     points: int = 10
     order: int = 0
@@ -43,6 +44,7 @@ class ExerciseResponse(ExerciseBase):
     id: int
     is_published: bool
     created_at: datetime
+    updated_at: datetime
     
     class Config:
         from_attributes = True

@@ -6,15 +6,15 @@ interface CourseCardProps {
 }
 
 const levelColors = {
-  debutant: 'bg-green-100 text-green-800',
-  intermediaire: 'bg-yellow-100 text-yellow-800',
-  avance: 'bg-red-100 text-red-800',
+  beginner: 'bg-green-100 text-green-800',
+  intermediate: 'bg-yellow-100 text-yellow-800',
+  advanced: 'bg-red-100 text-red-800',
 };
 
 const levelLabels = {
-  debutant: 'Débutant',
-  intermediaire: 'Intermédiaire',
-  avance: 'Avancé',
+  beginner: 'Débutant',
+  intermediate: 'Intermédiaire',
+  advanced: 'Avancé',
 };
 
 export default function CourseCard({ course }: CourseCardProps) {
@@ -25,10 +25,10 @@ export default function CourseCard({ course }: CourseCardProps) {
           <h3 className="text-xl font-semibold text-gray-800">{course.title}</h3>
           <span
             className={`px-3 py-1 rounded-full text-xs font-semibold ${
-              levelColors[course.level]
+              levelColors[course.difficulty_level]
             }`}
           >
-            {levelLabels[course.level]}
+            {levelLabels[course.difficulty_level]}
           </span>
         </div>
         <p className="text-gray-600 mb-4">{course.description}</p>

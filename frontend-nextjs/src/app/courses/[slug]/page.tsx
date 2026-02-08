@@ -51,9 +51,15 @@ export default function CourseDetailPage() {
   }
 
   const levelColors = {
-    debutant: 'bg-green-100 text-green-800',
-    intermediaire: 'bg-yellow-100 text-yellow-800',
-    avance: 'bg-red-100 text-red-800',
+    beginner: 'bg-green-100 text-green-800',
+    intermediate: 'bg-yellow-100 text-yellow-800',
+    advanced: 'bg-red-100 text-red-800',
+  };
+
+  const levelLabels = {
+    beginner: 'Débutant',
+    intermediate: 'Intermédiaire',
+    advanced: 'Avancé',
   };
 
   return (
@@ -73,10 +79,10 @@ export default function CourseDetailPage() {
           </div>
           <span
             className={`px-4 py-2 rounded-full text-sm font-semibold ${
-              levelColors[course.level]
+              levelColors[course.difficulty_level]
             }`}
           >
-            {course.level}
+            {levelLabels[course.difficulty_level]}
           </span>
         </div>
 

@@ -5,16 +5,25 @@ import { useState } from 'react';
 interface CodeEditorProps {
   initialCode?: string;
   onRun?: (code: string) => void;
+  onCodeChange?: (code: string) => void;
   readOnly?: boolean;
 }
 
 export default function CodeEditor({ 
   initialCode = '# Écrivez votre code Python ici\n', 
   onRun,
+  onCodeChange,
   readOnly = false 
 }: CodeEditorProps) {
   const [code, setCode] = useState(initialCode);
   const [isRunning, setIsRunning] = useState(false);
+
+  const handleCodeChange = (newCode: string) => {
+    setCode(newCode);
+    if (onCodeChange) {
+      onCodeChange(newCode);
+    }
+  };
 
   const handleRun = async () => {
     if (onRun) {
@@ -32,7 +41,7 @@ export default function CodeEditor({
       const start = textarea.selectionStart;
       const end = textarea.selectionEnd;
       const newCode = code.substring(0, start) + '    ' + code.substring(end);
-      setCode(newCode);
+      handleCodeChange(newCode);
       // Set cursor position after the inserted tab
       setTimeout(() => {
         textarea.selectionStart = textarea.selectionEnd = start + 4;
@@ -61,7 +70,7 @@ export default function CodeEditor({
       </div>
       <textarea
         value={code}
-        onChange={(e) => setCode(e.target.value)}
+        onChange={(e) => handleCodeChange(e.target.value)}
         onKeyDown={handleKeyDown}
         readOnly={readOnly}
         className="w-full p-4 font-mono text-sm focus:outline-none resize-none"

@@ -11,7 +11,7 @@ from app.schemas import CourseCreate, CourseUpdate, CourseResponse, CourseListRe
 router = APIRouter(prefix="/courses", tags=["courses"])
 
 
-@router.get("/", response_model=CourseListResponse)
+@router.get("/", response_model=List[CourseResponse])
 async def get_courses(
     skip: int = 0,
     limit: int = 100,
@@ -25,9 +25,8 @@ async def get_courses(
         query = query.filter(Course.difficulty_level == difficulty)
     
     courses = query.order_by(Course.order).offset(skip).limit(limit).all()
-    total = query.count()
     
-    return {"courses": courses, "total": total}
+    return courses
 
 
 @router.get("/{course_id}", response_model=CourseResponse)

@@ -68,12 +68,12 @@ export default function ActivitiesPage() {
               onClick={() => router.push(`/activities/${activity.id}`)}
               className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-6 cursor-pointer"
             >
-              <div className="text-4xl mb-3">{typeIcons[activity.type]}</div>
+              <div className="text-4xl mb-3">{typeIcons[activity.activity_type]}</div>
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 {activity.title}
               </h3>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-500 capitalize">{activity.type}</span>
+                <span className="text-gray-500 capitalize">{activity.activity_type}</span>
                 <span className="text-blue-600">🏆 {activity.points} pts</span>
               </div>
             </div>
